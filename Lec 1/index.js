@@ -124,9 +124,22 @@ import ReactDOM  from "react-dom/client";
 // );
 //its very hard to maintain our code like this, hard to debug, modify, understand...
 //so Here comes the JSX so make developer Experience better
-
-
+const heading4 = <h1 key="jsx-1">Learning JSX</h1>
+const container3 = (
+    <div>
+        <h1>Namaste React</h1>
+        <h2>I am Ayush Shrivastav</h2>
+        <h3>List of Fruits</h3>
+        <ul>
+            <li>Mango</li>
+            <li>Grapes</li>
+            <li>Papaya</li>
+            <li>Apple</li>
+            <li>Guava</li>
+        </ul>
+    </div>
+);
 // console.log(heading);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 //passing a react element inside the root
-root.render(container2);
+root.render(container3);
