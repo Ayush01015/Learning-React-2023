@@ -1,3 +1,6 @@
+import React from "react";
+import ReactDOM  from "react-dom/client";
+
 const heading = React.createElement( //creating element take 3 Arguments
   "h1", //what elemenr you want to create
   { //object where you pass Attribures or props
@@ -29,10 +32,6 @@ const container = React.createElement(
 ); //passing Array of element, Wraping them in one container
 
 console.log(heading);
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
-
 //passing a react element inside the root
-
-
 root.render(container);
