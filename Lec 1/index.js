@@ -126,11 +126,25 @@ import ReactDOM  from "react-dom/client";
 //so Here comes the JSX so make developer Experience better
 const heading4 = <h1 key="jsx-1">Learning JSX</h1>
 const container3 = (
-    <div>
+    <div
+    style={{
+        backgroundColor:"black",
+        color:"white",
+        border :"2px solid red",
+        border:"5px solid cyan",
+        display:"flex",
+        flexDirection:"column",
+        padding:"20px"   
+    }}
+    >
         <h1>Namaste React</h1>
         <h2>I am Ayush Shrivastav</h2>
         <h3>List of Fruits</h3>
-        <ul>
+        <ul
+        style={{
+            color:"yellow"
+        }}
+        >
             <li>Mango</li>
             <li>Grapes</li>
             <li>Papaya</li>
