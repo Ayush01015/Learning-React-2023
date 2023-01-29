@@ -32,7 +32,13 @@ const container = React.createElement(
   {
     id: "container",
     style:{
-
+        backgroundColor:"black",
+        color:"white",
+        border :"2px solid red",
+        border:"5px solid cyan",
+        display:"flex",
+        flexDirection:"column",
+        padding:"20px"
     }
   },
   [heading, heading2]
