@@ -6,26 +6,13 @@ const Header = () => {
         <div
         className="font"
         style={{
-            backgroundColor:"black",
-            color:"white",
-            padding:"20px",
-            margin:"auto auto",
-            fontSize:"1.3rem",
-            display:"flex",
-            flexDirection:"row",
-            alignItems:"center",
-            fontWeight:"bold"
+            
 
         }}
         >
             <span style={{cursor:"pointer"}}>LOGO</span>
             <ul style={{
-                display:"flex",
-                justifyContent:"space-evenly",
-                alignItems:"center",
-                listStyle:"none",
-                // border:"2px solid red",
-                marginLeft:"50rem"
+                
 
                 
             }}>
