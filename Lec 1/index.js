@@ -153,7 +153,38 @@ const container3 = (
         </ul>
     </div>
 );
-// console.log(heading);
+const Container = () => {
+    return (
+        <div
+    style={{
+        backgroundColor:"black",
+        color:"white",
+        border :"2px solid red",
+        border:"5px solid cyan",
+        display:"flex",
+        flexDirection:"column",
+        padding:"20px"   
+    }}
+    >
+        <h1>Namaste React</h1>
+        <h2>I am Ayush Shrivastav</h2>
+        <h3>List of Fruits</h3>
+        <ul
+        style={{
+            color:"yellow"
+        }}
+        >
+            <li>Mango</li>
+            <li>Grapes</li>
+            <li>Papaya</li>
+            <li>Apple</li>
+            <li>Guava</li>
+            <li>Amla</li>
+        </ul>
+    </div>
+    )
+}
+// console.log(Container4);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 //passing a react element inside the root
-root.render(container3);
+root.render(<Container/>);
