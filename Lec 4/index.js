@@ -1916,16 +1916,29 @@ const restaurants = [
     "subtype": "basic"
   }
 ]
-const Card = () =>{
+const Card = (props) =>{
   return(
     <div className="card-component">
     <div
     className="card"
     >
-      <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/gjnwk48xtjwvad87fbho" alt="img" />
-      <h3>Chawlas veg Roll</h3>
-      <h4>north indian , chinese, kebabs</h4>
-      <h5>Rating : 5star</h5>
+    <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/gjnwk48xtjwvad87fbho" alt="img" />
+    <div className="card-items">
+    <span
+    style={{
+      fontSize:"1.5rem",
+      fontWeight:"bolder",
+      color:"gray"
+    }}
+    >{props.data?.name}</span>
+      <p>{props.data?.address}</p>
+      <span id="cuisines">{restaurants[0].data?.cuisines.join(", ")}</span>
+      <p>{props.data?.area}</p>
+      <div id="card-rating">
+      <h5>{props.data?.totalRatingsString}</h5>
+      <h5>{props.data?.deliveryTime} MINS</h5>
+      </div>
+    </div>
     </div>
     </div>
   )
@@ -1934,7 +1947,14 @@ const SwiGker = () =>{
   return(
     <>
       <Header/>
-      <div
+      <Body/>
+    </>
+  )
+}
+
+const Body = ()=>{
+  return(
+  <div
       style={{
         display:"flex",
         flexDirection:"row",
@@ -1942,14 +1962,13 @@ const SwiGker = () =>{
         justifyContent:"space-evenly",
         margin:"60px"
       }}
-      > 
-      <Card/>
-      <Card/>
-      <Card/>
-      <Card/>
-
-      </div>0
-    </>
+      >
+      {
+        restaurants.map((restaurant)=>{
+          <Card/>
+        })
+      } 
+  </div>
   )
 }
 const root = ReactDOM.createRoot(document.getElementById("root"));
