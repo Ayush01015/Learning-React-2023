@@ -1917,12 +1917,13 @@ const restaurants = [
   }
 ]
 const Card = (props) =>{
+  console.log(props);
   return(
     <div className="card-component">
     <div
     className="card"
     >
-    <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/gjnwk48xtjwvad87fbho" alt="img" />
+    <img src={'https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/'+props.restaurant.data?.cloudinaryImageId} alt="img" />
     <div className="card-items">
     <span
     style={{
@@ -1930,17 +1931,18 @@ const Card = (props) =>{
       fontWeight:"bolder",
       color:"gray"
     }}
-    >{props.data?.name}</span>
-      <p>{props.data?.address}</p>
-      <span id="cuisines">{restaurants[0].data?.cuisines.join(", ")}</span>
-      <p>{props.data?.area}</p>
+    >{props.restaurant.data?.name}</span>
+      <p>{props.restaurant.data?.address}</p>
+      <span id="cuisines">{props.restaurant.data?.cuisines.join(", ")}</span>
+      <p>{props.restaurant.data?.area}</p>
       <div id="card-rating">
-      <h5>{props.data?.totalRatingsString}</h5>
-      <h5>{props.data?.deliveryTime} MINS</h5>
+      <h5>{props.restaurant.data?.totalRatingsString}</h5>
+      <h5>{props.restaurant.data?.deliveryTime} MINS</h5>
       </div>
     </div>
     </div>
     </div>
+    
   )
 }
 const SwiGker = () =>{
@@ -1963,11 +1965,21 @@ const Body = ()=>{
         margin:"60px"
       }}
       >
-      {
+      <Card restaurant={restaurants[0]}/>
+      <Card restaurant={restaurants[1]}/>
+      <Card restaurant={restaurants[2]}/>
+      <Card restaurant={restaurants[3]}/>
+      <Card restaurant={restaurants[4]}/>
+      <Card restaurant={restaurants[5]}/>
+      <Card restaurant={restaurants[6]}/>
+      <Card restaurant={restaurants[7]}/>
+      <Card restaurant={restaurants[8]}/>
+      <Card restaurant={restaurants[9]}/>
+      {/* {
         restaurants.map((restaurant)=>{
           <Card/>
         })
-      } 
+      }  */}
   </div>
   )
 }
