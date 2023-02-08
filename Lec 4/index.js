@@ -1881,8 +1881,8 @@ const restaurants = [
     subtype: "basic",
   },
 ];
-const Card = ({ restaurant }) => {
-  const { name, cloudinaryImageId ,address, totalRatingsString, deliveryTime, area, cuisines } = restaurant.data;
+const Card = ({ name, cloudinaryImageId ,address, totalRatingsString, deliveryTime, area, cuisines }) => {
+  // const { name, cloudinaryImageId ,address, totalRatingsString, deliveryTime, area, cuisines } = restaurant.data;
   return (
     <div className="card-component">
       <div className="card">
@@ -1944,7 +1944,7 @@ const Body = () => {
       <Card restaurant={restaurants[8]}/>
       <Card restaurant={restaurants[9]}/> */}
       {restaurants.map((restaurant) => {
-        return <Card restaurant={restaurant} />;
+        return <Card {...restaurant.data} />;
       })}
     </div>
   );
