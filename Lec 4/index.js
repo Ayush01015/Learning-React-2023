@@ -1964,7 +1964,7 @@ const Body = ()=>{
         justifyContent:"center",
       }}
       >
-      <Card restaurant={restaurants[0]}/>
+      {/* <Card restaurant={restaurants[0]}/>
       <Card restaurant={restaurants[1]}/>
       <Card restaurant={restaurants[2]}/>
       <Card restaurant={restaurants[3]}/>
@@ -1973,14 +1973,13 @@ const Body = ()=>{
       <Card restaurant={restaurants[6]}/>
       <Card restaurant={restaurants[7]}/>
       <Card restaurant={restaurants[8]}/>
-      <Card restaurant={restaurants[9]}/>
-      {/* <Card restaurant={restaurants[10]}/>
-      <Card restaurant={restaurants[11]}/> */}
-      {/* {
-        restaurants.map((restaurant)=>{
-          <Card/>
-        })
-      }  */}
+      <Card restaurant={restaurants[9]}/> */}
+      {
+          restaurants.map((restaurant)=>{
+              return  <Card restaurant={restaurant}/>
+          })
+      }
+
   </div>
   )
 }
