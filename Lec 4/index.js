@@ -1917,7 +1917,7 @@ const restaurants = [
   }
 ]
 const Card = (props) =>{
-  console.log(props);
+  // console.log(props);
   return(
     <div className="card-component">
     <div
@@ -1961,8 +1961,7 @@ const Body = ()=>{
         display:"flex",
         flexDirection:"row",
         flexWrap:"wrap",
-        justifyContent:"space-evenly",
-        margin:"60px"
+        justifyContent:"center",
       }}
       >
       <Card restaurant={restaurants[0]}/>
@@ -1975,6 +1974,8 @@ const Body = ()=>{
       <Card restaurant={restaurants[7]}/>
       <Card restaurant={restaurants[8]}/>
       <Card restaurant={restaurants[9]}/>
+      {/* <Card restaurant={restaurants[10]}/>
+      <Card restaurant={restaurants[11]}/> */}
       {/* {
         restaurants.map((restaurant)=>{
           <Card/>
