@@ -1882,7 +1882,6 @@ const restaurants = [
   },
 ];
 const Card = ({ restaurant }) => {
-  // console.log(restaurant);
   const { name, cloudinaryImageId ,address, totalRatingsString, deliveryTime, area, cuisines } = restaurant.data;
   return (
     <div className="card-component">
