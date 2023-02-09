@@ -1,3 +1,9 @@
+/*
+    this file is used to store variable which we use in our whole project at different locations ( Something Like global Variable )
+    we do this to make our code clean
+*/
+
+
 export const IMG_CDN_URL =
   "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
 
