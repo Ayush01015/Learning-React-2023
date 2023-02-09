@@ -1,14 +1,17 @@
-import Card from "./components/Card";
-import {restaurants} from "./constants";
-
+import Card from "../components/Card";
+import { restaurants } from "../constants";
+import Search from "./Search";
 const Body = () => {
-    return (
-      <div className="body">  
+  return (
+    <>
+      <Search />
+      <div className="body">
         {restaurants.map((restaurant) => {
           return <Card {...restaurant.data} key={restaurant.data.uuid} />;
-        })}
+        })}z
       </div>
-    );
-  };
+    </>
+  );
+};
 
-  export default Body;
+export default Body;

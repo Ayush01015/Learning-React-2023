@@ -27,7 +27,7 @@
 }
 .card-component{
     /* border:1px solid red; */
-    margin:15px;
+    margin: 50px 15px 10px 15px;
     font-family: 'Montserrat', sans-serif;
 }
 .card{
@@ -63,3 +63,30 @@
     justify-content: space-between;
 }
 
+.search-component{
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    padding: 50px 0px 0px 0px;
+    align-items: center;
+}
+.search-input{
+    font-size: 1.4rem;
+    padding: 5px;
+    border-radius: 3px;
+}
+.search-btn{
+    font-size: 1.4rem;
+    margin-left: 40px;
+    padding: 5px;
+    background-color: #F99417;
+    color: #000;
+    border: none;
+    width:100px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.search-btn:hover {
+    background-color: hsl(33, 93%, 61%);
+}
