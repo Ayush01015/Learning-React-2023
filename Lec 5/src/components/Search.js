@@ -1,12 +1,22 @@
+import { useState } from "react";
 
-const value = "Ayush";
+
+// const value = "Ayush"; cannot use hard coded data.
+
 const Search = () => {
-    return(
-        <div className="search-component">
-        <input className="search-input" type="text" placeholder="Search..." value={value}/>
-        <button className="search-btn">Search</button>
-        </div>
-    )
-}
+    const [searchInput,setSearchInput] = useState("");
+  return (
+    <div className="search-component">
+      <input
+        className="search-input"
+        type="text"
+        placeholder="Search..."
+        value={searchInput}
+        onChange={(e)=>setSearchInput(e.target.value)}
+      />
+      <button className="search-btn">Search</button>
+    </div>
+  );
+};
 
 export default Search;
