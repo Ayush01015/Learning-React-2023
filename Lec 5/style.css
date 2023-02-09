@@ -5,7 +5,12 @@
     margin: 0;
     box-sizing: border-box;
 }
-
+.body{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 .font{
     font-family: 'Montserrat', sans-serif;
 }

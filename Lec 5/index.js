@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./src/components/Header.js";
-import Card from "./src/components/Card.js"
+import Card from "./src/components/Card.js";
 const restaurants = [
   {
     type: "restaurant",
@@ -1860,16 +1860,9 @@ const SwiGker = () => {
 
 const Body = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "row",
-        flexWrap: "wrap",
-        justifyContent: "center",
-      }}
-    >
+    <div className="body">
       {restaurants.map((restaurant) => {
-        return <Card {...restaurant.data} key={restaurant.data.uuid}/>;
+        return <Card {...restaurant.data} key={restaurant.data.uuid} />;
       })}
     </div>
   );
