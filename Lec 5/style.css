@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.font{
+    font-family: 'Montserrat', sans-serif;
+}
+.li-item{
+    color:white;
+    margin-right:60px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+.li-item:hover{
+    color:yellow;
+    text-decoration: underline;
+    transition: 0.6s;
+}
+.card-component{
+    /* border:1px solid red; */
+    margin:15px;
+    font-family: 'Montserrat', sans-serif;
+}
+.card{
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 295px;
+    height: 420px;
+}
+.card > img{
+    width:100%;
+}
+
+.card-items{
+    display: flex;
+    flex-direction: column;
+    width:260px;
+    height: 360px;
+    /* border:1px solid red; */
+    margin-top:10px;
+    justify-content: space-between;
+
+}
+#cuisines{
+    font-size: 0.8rem;
+}
+
+#card-rating{
+    display: flex;
+    justify-content: space-between;
+}
+
