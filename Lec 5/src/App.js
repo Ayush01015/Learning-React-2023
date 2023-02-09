@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Header from "./src/components/Header.js";
-import Card from "./src/components/Card.js";
+import Header from "./components/Header";
+import Card from "./components/Card";
 const restaurants = [
   {
     type: "restaurant",
@@ -1860,7 +1860,7 @@ const SwiGker = () => {
 
 const Body = () => {
   return (
-    <div className="body">
+    <div className="body">  
       {restaurants.map((restaurant) => {
         return <Card {...restaurant.data} key={restaurant.data.uuid} />;
       })}

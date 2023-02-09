@@ -1,5 +1,4 @@
 const Card = ({ name, cloudinaryImageId ,address, totalRatingsString, deliveryTime, area, cuisines }) => {
-    // const { name, cloudinaryImageId ,address, totalRatingsString, deliveryTime, area, cuisines } = restaurant.data;
     return (
       <div className="card-component">
         <div className="card">
