@@ -1940,11 +1940,11 @@ const Body = () => {
       <Card restaurant={restaurants[4]}/>
       <Card restaurant={restaurants[5]}/>
       <Card restaurant={restaurants[6]}/>
-      <Card restaurant={restaurants[7]}/>
+      <Card restaurant={restaurants[7]}/>b
       <Card restaurant={restaurants[8]}/>
       <Card restaurant={restaurants[9]}/> */}
       {restaurants.map((restaurant) => {
-        return <Card {...restaurant.data} />;
+        return <Card {...restaurant.data} key={restaurant.data.uuid}/>;
       })}
     </div>
   );

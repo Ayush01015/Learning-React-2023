@@ -14,7 +14,9 @@ const Header = () => {
           fontWeight: "bold",
         }}
       >
-        <span style={{ cursor: "pointer" }}>swiGker</span>
+        <span style={{ cursor: "pointer",
+        fontSize:"2rem",
+        }}>swiGker</span>
         <ul
           style={{
             display: "flex",
