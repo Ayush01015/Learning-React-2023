@@ -1,10 +1,12 @@
+import {IMG_CDN_URL} from "../constants"
+
 const Card = ({ name, cloudinaryImageId ,address, totalRatingsString, deliveryTime, area, cuisines }) => {
     return (
       <div className="card-component">
         <div className="card">
           <img
             src={
-              "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + cloudinaryImageId
+              IMG_CDN_URL + cloudinaryImageId
             }
             alt="img"
           />
