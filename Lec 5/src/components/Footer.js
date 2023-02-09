@@ -10,15 +10,21 @@ const Footer = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        border: "1px solid green",
+        // border: "1px solid green",
       }}
     >
       <div
         style={{
           fontSize: "1.3rem",
           padding: "10px",
-          border: "1px solid red",
+        //   border: "1px solid red",
+          width:"25rem",
+          height:"5vh",
+          display:"flex",
+          alignItems:"center",
+          justifyContent:"center"
         }}
+        className="font"
       >
         {name}
       </div>
@@ -31,10 +37,11 @@ const Footer = () => {
           border: "none",
           backgroundColor: "#8BF5FA",
           borderRadius: "4px",
+          fontSize:"1rem"
         }}
         onClick={() => {
           name === "Copy Right 2023 swiGker"
-            ? setName("Namaste It's Ayush  Shrivastav")
+            ? setName("Namaste, I am Ayush  Shrivastav")
             : setName("Copy Right 2023 swiGker");
         }}
       >
