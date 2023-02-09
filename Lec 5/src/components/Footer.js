@@ -10,14 +10,12 @@ const Footer = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        // border: "1px solid green",
       }}
     >
       <div
         style={{
           fontSize: "1.3rem",
           padding: "10px",
-        //   border: "1px solid red",
           width:"25rem",
           height:"5vh",
           display:"flex",
@@ -45,7 +43,7 @@ const Footer = () => {
             : setName("Copy Right 2023 swiGker");
         }}
       >
-        Click me!!
+        Click Me!!
       </button>
     </div>
   );
