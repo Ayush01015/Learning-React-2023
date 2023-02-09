@@ -1,40 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-
-const Header = () => {
-  return (
-    <div
-      className="font"
-      style={{
-        backgroundColor: "black",
-        color: "white",
-        padding: "20px",
-        margin: "auto auto",
-        fontSize: "1.3rem",
-        display: "flex",
-        flexDirection: "row",
-        alignItems: "center",
-        fontWeight: "bold",
-      }}
-    >
-      <span style={{ cursor: "pointer" }}>swiGker</span>
-      <ul
-        style={{
-          display: "flex",
-          justifyContent: "space-evenly",
-          alignItems: "center",
-          listStyle: "none",
-          marginLeft: "50rem",
-        }}
-      >
-        <li className="li-item">Home</li>
-        <li className="li-item">About</li>
-        <li className="li-item">Contact Us</li>
-        <li className="li-item">Shop</li>
-      </ul>
-    </div>
-  );
-};
+import Header from "./src/components/Header.js";
+import Card from "./src/components/Card.js"
 const restaurants = [
   {
     type: "restaurant",
@@ -1881,39 +1848,7 @@ const restaurants = [
     subtype: "basic",
   },
 ];
-const Card = ({ name, cloudinaryImageId ,address, totalRatingsString, deliveryTime, area, cuisines }) => {
-  // const { name, cloudinaryImageId ,address, totalRatingsString, deliveryTime, area, cuisines } = restaurant.data;
-  return (
-    <div className="card-component">
-      <div className="card">
-        <img
-          src={
-            "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + cloudinaryImageId
-          }
-          alt="img"
-        />
-        <div className="card-items">
-          <span
-            style={{
-              fontSize: "1.5rem",
-              fontWeight: "bolder",
-              color: "gray",
-            }}
-          >
-            {name}
-          </span>
-          <p>{address}</p>
-          <span id="cuisines">{cuisines.join(", ")}</span>
-          <p>{area}</p>
-          <div id="card-rating">
-            <h5>{totalRatingsString}</h5>
-            <h5>{deliveryTime} MINS</h5>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
+
 const SwiGker = () => {
   return (
     <>
@@ -1933,16 +1868,6 @@ const Body = () => {
         justifyContent: "center",
       }}
     >
-      {/* <Card restaurant={restaurants[0]}/>
-      <Card restaurant={restaurants[1]}/>
-      <Card restaurant={restaurants[2]}/>
-      <Card restaurant={restaurants[3]}/>
-      <Card restaurant={restaurants[4]}/>
-      <Card restaurant={restaurants[5]}/>
-      <Card restaurant={restaurants[6]}/>
-      <Card restaurant={restaurants[7]}/>
-      <Card restaurant={restaurants[8]}/>
-      <Card restaurant={restaurants[9]}/> */}
       {restaurants.map((restaurant) => {
         return <Card {...restaurant.data} key={restaurant.data.uuid}/>;
       })}
