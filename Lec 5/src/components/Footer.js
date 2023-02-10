@@ -40,7 +40,7 @@ const Footer = () => {
         onClick={() => {
           name === "Copy Right 2023 swiGker"
             ? setName("Namaste, I am Ayush  Shrivastav")
-            : setName("Copy Right 2023 swiGker");
+            : setName("Copy Right 2023 swiGker"); //logic
         }}
       >
         Click Me!!
