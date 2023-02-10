@@ -47,21 +47,21 @@ const Body = () => {
 export default Body;
 
 /*
-    const [searchInput,setSearchInput] = useState("");
-    # It is a useState Hook used to declare a local state variable.
-    # Hooks are nothing but just a JS function
-    # Here useState return an Array
-    # And in returned Array index[0] is Variable name
-    # And index[1] is function which is used to change the value of     state variable.
-    # const [searchInput,setSearchInput] = useState("");
-    # const [     0     ,     1        ] = useState(defaultvalue);
-    */
+const [searchInput,setSearchInput] = useState("");
+# It is a useState Hook used to declare a local state variable.
+# Hooks are nothing but just a JS function
+# Here useState return an Array
+# And in returned Array index[0] is Variable name
+# And index[1] is function which is used to change the value of     state variable.
+# const [searchInput,setSearchInput] = useState("");
+# const [     0     ,     1        ] = useState(defaultvalue);
+*/
 /*
-        value={searchInput} //default "" --> empty String
-        onChange={(e)=>setSearchInput(e.target.value)}
-        # Here setSearchInput() function is taking e.target.value
-        as Argument. 
-        # setSearhInput() changes the state to whatever
-        there is in e.target.value
-        # setSearchInput() is used to change the local state variable.
-        */
+value={searchInput} //default "" --> empty String
+onChange={(e)=>setSearchInput(e.target.value)}
+# Here setSearchInput() function is taking e.target.value
+as Argument. 
+# setSearhInput() changes the state to whatever
+there is in e.target.value
+# setSearchInput() is used to change the local state variable.
+*/
