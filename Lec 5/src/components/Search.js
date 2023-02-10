@@ -1,10 +1,21 @@
 import { useState } from "react";
-
+import { restaurantsList } from "../constants";
 
 // const value = "Ayush"; cannot use hard coded data.
+// function filterData(searchText,restaurants){
+//     return restaurants.filter((restaurant)=>restaurant.data.name.includes(searchText));
+// }
+function filterData(searchText, restaurants) {
+  const filterData = restaurants.filter((restaurant) =>
+    restaurant.data.name.includes(searchText)
+  );
+
+  return filterData;
+}
 
 const Search = () => {
     //need to use Hook useState
+    const [restaurants,setRestaurants] = useState(restaurantsList);
     const [searchInput,setSearchInput] = useState("");
     /*
     const [searchInput,setSearchInput] = useState("");
@@ -34,7 +45,14 @@ const Search = () => {
         # setSearchInput() is used to change the local state variable.
         */
       />
-      <button className="search-btn">Search</button>
+      <button className="search-btn"
+        onClick={() => {
+          //need to filter the data
+          const data = filterData(searchInput, restaurants);
+          // update the state - restaurants
+          setRestaurants(data);
+        }}     
+      >Search</button>
     </div>
   );
 };

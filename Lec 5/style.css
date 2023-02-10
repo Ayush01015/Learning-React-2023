@@ -85,7 +85,7 @@
     width:100px;
     border-radius: 3px;
     cursor: pointer;
-    transition: 0.3s all ease-in-out;
+    /* transition: 0.3s all ease-in-out; */
 }
 
 .search-btn:hover {
