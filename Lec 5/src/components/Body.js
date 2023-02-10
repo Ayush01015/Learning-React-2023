@@ -1,3 +1,4 @@
+
 import Card from "../components/Card";
 import { useState } from "react";
 import { restaurantsList } from "../constants";
@@ -45,3 +46,4 @@ const Body = () => {
 };
 
 export default Body;
+
