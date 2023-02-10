@@ -44,7 +44,7 @@ const Footer = () => {
         }}
       >
         Click Me!!
-      </button> //toogle functionality for footer
+      </button> //toogle functionality for footer Project
     </div>
   );
 };
