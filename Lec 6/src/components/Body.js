@@ -1,7 +1,6 @@
 import Card from "../components/Card";
 import { useState } from "react";
 import { restaurantsList } from "../constants";
-// import Search from "./Search";
 /*
 const [searchInput,setSearchInput] = useState("");
 # It is a useState Hook used to declare a local state variable.
