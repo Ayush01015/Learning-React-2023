@@ -23,7 +23,7 @@ const Card = ({ name, cloudinaryImageId ,address, totalRatingsString, deliveryTi
             {/* <p>{address}</p> */}
             <span id="cuisines">{cuisines.join(", ")}</span>
             <p>{area}</p>
-            <div id="card-rating">
+            <div className="card-rating">
               <h5>{totalRatingsString}</h5>
               <h5>{deliveryTime} MINS</h5>
             </div>

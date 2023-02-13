@@ -1,5 +1,5 @@
 import Card from "../components/Card";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import { restaurantsList } from "../constants";
 import { SWIGGY_PUBLIC_API } from "../constants";
 import ShimmerUI from "./ShimmerUI";
@@ -33,18 +33,43 @@ function filterData(searchText, restaurants) {
 const Body = () => {
   const [searchInput, setSearchInput] = useState("");
   const [restaurants, setRestaurants] = useState([]);
-  // console.log("re-render");
-  async function getRestaurants(){
+  // console.log(restaurants);
+  async function getRestaurants() {
     const data = await fetch(SWIGGY_PUBLIC_API);
     const json = await data.json();
     // console.log("Data: ", data);
     console.log("Json: ", json);
     setRestaurants(json?.data?.cards[2]?.data?.data?.cards);
   }
-  useEffect(()=>{
+  useEffect(() => {
     getRestaurants();
-  },[])
-  return restaurants.length===0?(<ShimmerUI/>): (
+  }, []);
+  return restaurants?.length === 0 ? (
+    <div
+      style={{
+        display:"flex",
+        flexDirection:"row",
+        flexWrap:"wrap",
+        justifyContent:"center"
+      }}
+    >
+      <ShimmerUI />
+      <ShimmerUI />
+      <ShimmerUI />
+      <ShimmerUI />
+      <ShimmerUI />
+      <ShimmerUI />
+      <ShimmerUI />
+      <ShimmerUI />
+      <ShimmerUI />
+      <ShimmerUI />
+      <ShimmerUI />
+      <ShimmerUI />
+      <ShimmerUI />
+      <ShimmerUI />
+      <ShimmerUI />
+    </div>
+  ) : (
     <>
       <div className="search-component">
         <input
@@ -77,5 +102,3 @@ const Body = () => {
 };
 
 export default Body;
-
-

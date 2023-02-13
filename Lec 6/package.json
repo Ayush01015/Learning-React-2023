@@ -18,9 +18,14 @@
   },
   "homepage": "https://github.com/Ayush01015/Learning-React-2023#readme",
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/material": "^5.11.8",
+    "@mui/styled-engine-sc": "^5.11.0",
     "babel-plugin-transform-remove-console": "^6.9.4",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "styled-components": "^5.3.6"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
