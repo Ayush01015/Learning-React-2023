@@ -2,6 +2,7 @@ import Card from "../components/Card";
 import { useState,useEffect } from "react";
 import { restaurantsList } from "../constants";
 import { SWIGGY_PUBLIC_API } from "../constants";
+import ShimmerUI from "./ShimmerUI";
 // import Search from "./Search";
 /*
 const [searchInput,setSearchInput] = useState("");
@@ -31,7 +32,7 @@ function filterData(searchText, restaurants) {
 }
 const Body = () => {
   const [searchInput, setSearchInput] = useState("");
-  const [restaurants, setRestaurants] = useState(restaurantsList);
+  const [restaurants, setRestaurants] = useState([]);
   // console.log("re-render");
   async function getRestaurants(){
     const data = await fetch(SWIGGY_PUBLIC_API);
@@ -42,8 +43,8 @@ const Body = () => {
   }
   useEffect(()=>{
     getRestaurants();
-  },[searchInput])
-  return (
+  },[])
+  return restaurants.length===0?(<ShimmerUI/>): (
     <>
       <div className="search-component">
         <input
