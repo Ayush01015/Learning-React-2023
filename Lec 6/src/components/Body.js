@@ -32,14 +32,13 @@ function filterData(searchText, restaurants) {
 const Body = () => {
   const [searchInput, setSearchInput] = useState("");
   const [restaurants, setRestaurants] = useState(restaurantsList);
-  console.log("re-render");
+  // console.log("re-render");
   async function getRestaurants(){
     const data = await fetch(SWIGGY_PUBLIC_API);
     const json = await data.json();
-    console.log("Data: ", data);
+    // console.log("Data: ", data);
     console.log("Json: ", json);
-
-
+    setRestaurants(json?.data?.cards[2]?.data?.data?.cards);
   }
   useEffect(()=>{
     getRestaurants();

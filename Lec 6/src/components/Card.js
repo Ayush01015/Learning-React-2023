@@ -20,7 +20,7 @@ const Card = ({ name, cloudinaryImageId ,address, totalRatingsString, deliveryTi
             >
               {name}
             </span>
-            <p>{address}</p>
+            {/* <p>{address}</p> */}
             <span id="cuisines">{cuisines.join(", ")}</span>
             <p>{area}</p>
             <div id="card-rating">
