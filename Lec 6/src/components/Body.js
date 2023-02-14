@@ -31,7 +31,7 @@ const Body = () => {
   }, []);
 
 
-  return filteredRestaurants?.length === 0 ? (
+  return allRestaurants?.length === 0 ? (
     <div
       style={{
         display:"flex",
