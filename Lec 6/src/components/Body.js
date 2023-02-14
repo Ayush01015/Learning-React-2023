@@ -30,7 +30,9 @@ const Body = () => {
     getRestaurants();
   }, []);
 
+  if(!allRestaurants) return null; //early return
 
+  if(filteredRestaurants.length === 0) return <h1>Not Found</h1>
   return allRestaurants?.length === 0 ? (
     <div
       style={{
