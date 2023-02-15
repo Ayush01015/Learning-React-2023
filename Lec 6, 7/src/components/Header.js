@@ -1,8 +1,8 @@
 import { useState } from "react";
-
+import { Link } from "react-router-dom";
 
 const Header = () => {
-  const [log,setLog] = useState(true);
+  const [log, setLog] = useState(true);
   return (
     <div
       className="font"
@@ -31,16 +31,28 @@ const Header = () => {
         }}
       >
         {/* have to add pseudo class active for 1st item* */}
-        <li className="li-item" style={{color:"#F99417",}} >Home</li> 
-        <li className="li-item">About</li>
-        <li className="li-item">Contact Us</li>
-        <li className="li-item">Shop</li>
+        <li className="li-item" style={{ color: "#F99417" }}>
+          <Link to="/">Home</Link>
+        </li>
+        <li className="li-item">
+          <Link to="/about">About</Link>
+        </li>
+        <li className="li-item">
+          <Link to="/">Contact</Link>
+        </li>
+        <li className="li-item">
+          <Link to="/">Deals</Link>
+        </li>
       </ul>
-        {log===true ? (
-          <button className="log-btn" onClick={()=>setLog(false)} >Log in</button>
-        ) : (
-          <button className="log-btn" onClick={()=>setLog(true)} >Log out</button>
-        )}
+      {log === true ? (
+        <button className="log-btn" onClick={() => setLog(false)}>
+          Log in
+        </button>
+      ) : (
+        <button className="log-btn" onClick={() => setLog(true)}>
+          Log out
+        </button>
+      )}
     </div>
   );
 };
