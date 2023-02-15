@@ -1,39 +1,46 @@
+import { useState } from "react";
+
+
 const Header = () => {
-    return (
-      <div
-        className="font"
+  const [log,setLog] = useState(false);
+  return (
+    <div
+      className="font"
+      style={{
+        backgroundColor: "black",
+        color: "white",
+        padding: "22px",
+        fontSize: "1.3rem",
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
+        fontWeight: "bold",
+        // justifyContent:"space-around"
+      }}
+    >
+      <span style={{ cursor: "pointer", fontSize: "2rem" }}>
+        swi<span style={{ color: "#F99417" }}>G</span>ker
+      </span>
+      <ul
         style={{
-          backgroundColor: "black",
-          color: "white",
-          padding: "20px",
-          margin: "auto auto",
-          fontSize: "1.3rem",
           display: "flex",
-          flexDirection: "row",
+          justifyContent: "space-evenly",
           alignItems: "center",
-          fontWeight: "bold",
+          listStyle: "none",
+          marginLeft: "40rem",
         }}
       >
-        <span style={{ cursor: "pointer",
-        fontSize:"2rem",
-        }}>swiGker</span>
-        <ul
-          style={{
-            display: "flex",
-            justifyContent: "space-evenly",
-            alignItems: "center",
-            listStyle: "none",
-            marginLeft: "50rem",
-          }}
-        >
-          <li className="li-item">Home</li>
-          <li className="li-item">About</li>
-          <li className="li-item">Contact Us</li>
-          <li className="li-item">Shop</li>
-        </ul>
-      </div>
-    );
-  };
-
-  export default Header;
-  
+        <li className="li-item">Home</li>
+        <li className="li-item">About</li>
+        <li className="li-item">Contact Us</li>
+        <li className="li-item">Shop</li>
+      </ul>
+        {log===true ? (
+          <button className="log-btn" onClick={()=>setLog(false)} >Log in</button>
+        ) : (
+          <button className="log-btn" onClick={()=>setLog(true)} >Log out</button>
+        )}
+    </div>
+  );
+};
+export default Header;
