@@ -11,8 +11,8 @@ const ShimmerUI = () => {
     >
       {Array(15)
         .fill("")
-        .map(() => (
-          <ShimmerCard />
+        .map((e,i) =>(
+          <ShimmerCard key={i} />
         ))}
     </div>
   );

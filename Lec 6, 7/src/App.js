@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Body from "./components/Body";
 import Footer from "./components/Footer";
 import AboutUs from "./components/AboutUs";
+import ErrorPage from "./components/ErrorPage";
 import {
   createBrowserRouter,
   RouterProvider,
@@ -21,7 +22,8 @@ const SwiGker = () => {
 const appRouter = createBrowserRouter([
   {
     path:"/",
-    element:<SwiGker/>
+    element:<SwiGker/>,
+    errorElement:<ErrorPage/>
   },
   {
     path:"/about",
