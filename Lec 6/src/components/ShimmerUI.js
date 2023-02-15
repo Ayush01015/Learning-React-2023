@@ -1,24 +1,21 @@
-import Skeleton from "@mui/material/Skeleton";
-import Stack from "@mui/material/Stack";
-
+import ShimmerCard from "./ShimmerCard";
 const ShimmerUI = () => {
   return (
-    <Stack className="card-component" spacing={1}>
-      <div className="card">
-        <Skeleton variant="rectangular" width={293} height={184} />
-        <div className="card-items">
-          <Skeleton variant="rectangular" width={260} height={60} />
-          <Skeleton variant="rectangular" width={260} height={30} />
-          <Skeleton variant="rectangular" width={100} height={19.2} />
-          <div className="card-rating">
-            <Skeleton variant="rectangular" width={86} height={16} />
-            <Skeleton variant="rectangular" width={56} height={16} />
-          </div>
-        </div>
-      </div>
-    </Stack>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "row",
+        flexWrap: "wrap",
+        justifyContent: "center",
+      }}
+    >
+      {Array(15)
+        .fill("")
+        .map(() => (
+          <ShimmerCard />
+        ))}
+    </div>
   );
 };
 
 export default ShimmerUI;
-

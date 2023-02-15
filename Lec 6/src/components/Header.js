@@ -30,7 +30,8 @@ const Header = () => {
           marginLeft: "40rem",
         }}
       >
-        <li className="li-item" style={{color:"#F99417",}} >Home</li> //have to add pseudo class active for this item
+        {/* have to add pseudo class active for 1st item* */}
+        <li className="li-item" style={{color:"#F99417",}} >Home</li> 
         <li className="li-item">About</li>
         <li className="li-item">Contact Us</li>
         <li className="li-item">Shop</li>
