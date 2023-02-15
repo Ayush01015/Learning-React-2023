@@ -2,7 +2,7 @@ import { useState } from "react";
 
 
 const Header = () => {
-  const [log,setLog] = useState(false);
+  const [log,setLog] = useState(true);
   return (
     <div
       className="font"
@@ -30,7 +30,7 @@ const Header = () => {
           marginLeft: "40rem",
         }}
       >
-        <li className="li-item">Home</li>
+        <li className="li-item" style={{color:"#F99417",}} >Home</li> //have to add pseudo class active for this item
         <li className="li-item">About</li>
         <li className="li-item">Contact Us</li>
         <li className="li-item">Shop</li>
