@@ -38,10 +38,10 @@ const Header = () => {
           <Link to="/about">About</Link>
         </li>
         <li className="li-item">
-          <Link to="/">Contact</Link>
+          <Link to="/contact">Contact</Link>
         </li>
         <li className="li-item">
-          <Link to="/">Deals</Link>
+          <Link to="/deals">Deals</Link>
         </li>
       </ul>
       {log === true ? (
