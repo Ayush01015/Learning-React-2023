@@ -20,7 +20,7 @@ const Body = () => {
   async function getRestaurants() { //fetching data fromm API
     const data = await fetch(SWIGGY_PUBLIC_API);
     const json = await data.json();
-    // console.log("Json: ", json);
+    console.log("Json: ", json);
     setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards); //Setting data in restaurants
     setfilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards); //Setting data in filtered restaurants for search.
   }
@@ -60,7 +60,7 @@ const Body = () => {
       </div>
       <div className="body">
         {filteredRestaurants.map((restaurant) => {
-          return <Card {...restaurant.data} key={restaurant.data.uuid} />;
+          return <Card {...restaurant.data} key={restaurant?.data?.id} />;
         })}
       </div>
     </>

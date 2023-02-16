@@ -13,10 +13,12 @@ import {
   Outlet,
 } from "react-router-dom";
 import Deals from "./components/Deals";
+import RestaurantsMenu from "./components/RestaurantsMenu";
 const SwiGker = () => {
   return (
     <>
       <Header />
+      {/* {every Children Will come at the place of Outlet when the Link is clicked} */}
       <Outlet/>
       <Footer/>
     </>
@@ -44,6 +46,10 @@ const appRouter = createBrowserRouter([
       {
         path:"/deals",
         element:<Deals/>
+      },
+      {
+        path:"/restaurants/:id",
+        element:<RestaurantsMenu/>
       },
     ]
   },

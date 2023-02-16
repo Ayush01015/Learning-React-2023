@@ -12,6 +12,8 @@ const Footer = () => {
         alignItems: "center",
         // border:"1px solid red",
         
+        
+        
       }}
     >
       <div
