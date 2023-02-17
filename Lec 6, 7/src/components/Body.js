@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 // import { restaurantsList } from "../constants";
 import { SWIGGY_PUBLIC_API } from "../constants";
 import ShimmerUI from "./ShimmerUI";
+import { Link } from "react-router-dom";
 function filterData(searchText, allRestaurants) {
    //filtering data from allRestaurants
   const filterData = allRestaurants.filter((restaurant) =>
@@ -60,7 +61,11 @@ const Body = () => {
       </div>
       <div className="body">
         {filteredRestaurants.map((restaurant) => {
-          return <Card {...restaurant.data} key={restaurant?.data?.id} />;
+          return(
+          <Link to={"restaurants/"+ restaurant?.data?.id }>
+          <Card {...restaurant.data} key={restaurant?.data?.id} />
+          </Link>
+          )
         })}
       </div>
     </>

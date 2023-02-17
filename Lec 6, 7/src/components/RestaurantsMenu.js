@@ -12,7 +12,7 @@ const RestaurantsMenu = () => {
   }, []);
 
   async function getRestaurantsMenu() {
-    const data = await fetch(SWIGGY_MENU_API);
+    const data = await fetch(SWIGGY_MENU_API+id);
     const json = await data.json();
     setRestaurant(json.data);
     console.log(json.data);
@@ -67,7 +67,7 @@ const RestaurantsMenu = () => {
                   <div className="menu-item-con-data">
                     <p
                       style={{
-                        fontSize: "1.6rem",
+                        fontSize: "1.3rem",
                         fontWeight: "bold",
                       }}
                     >
@@ -84,7 +84,6 @@ const RestaurantsMenu = () => {
             ))}
         </div>
       </div>
-      {/* <ShimmerMenu/> */}
     </div>
   );
 };
