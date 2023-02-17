@@ -194,3 +194,6 @@ a{
     font-size: 3rem;
     font-weight: 500;
 }
+.shimmer-menu{
+    align-items: center;
+}

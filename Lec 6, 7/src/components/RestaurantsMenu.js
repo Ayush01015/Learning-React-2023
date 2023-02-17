@@ -3,9 +3,10 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { SWIGGY_MENU_API } from "../constants";
 import { IMG_CDN_URL } from "../constants";
+import ShimmerMenu from "./ShimmerMenu";
 const RestaurantsMenu = () => {
   const { id } = useParams();
-  const [restaurant, setRestaurant] = useState({});
+  const [restaurant, setRestaurant] = useState(null);
   useEffect(() => {
     getRestaurantsMenu();
   }, []);
@@ -17,7 +18,9 @@ const RestaurantsMenu = () => {
     console.log(json.data);
   }
 
-  return (
+  return (!restaurant) ? (
+    <ShimmerMenu />
+  ) : (
     <div className="restraunt-menu">
       <div className="menu-header">
         <div className="menu-header-img menu-header-mg">
@@ -61,24 +64,27 @@ const RestaurantsMenu = () => {
             Object.values(restaurant?.menu?.items).map((item) => (
               <div className="menu-sub-2" key={item.id}>
                 <div className="menu-item-con">
-                <div className="menu-item-con-data">
-                  <p
-                  style={{
-                    fontSize:"1.6rem",
-                    fontWeight:"bold",
-                  }}
-                  >{item.name}</p>
-                  <p style={{ fontSize:"1rem"  }} >{item.category}</p>
-                  <p>₹{restaurant?.menu?.items[item.id].price/(100)}</p>
-                </div>
-                <div className="menu-item-con-img">
-                  <img src={IMG_CDN_URL + item.cloudinaryImageId} alt="img" />
-                </div>
+                  <div className="menu-item-con-data">
+                    <p
+                      style={{
+                        fontSize: "1.6rem",
+                        fontWeight: "bold",
+                      }}
+                    >
+                      {item.name}
+                    </p>
+                    <p style={{ fontSize: "1rem" }}>{item.category}</p>
+                    <p>₹{restaurant?.menu?.items[item.id].price / 100}</p>
+                  </div>
+                  <div className="menu-item-con-img">
+                    <img src={IMG_CDN_URL + item.cloudinaryImageId} alt="img" />
+                  </div>
                 </div>
               </div>
             ))}
         </div>
       </div>
+      {/* <ShimmerMenu/> */}
     </div>
   );
 };
