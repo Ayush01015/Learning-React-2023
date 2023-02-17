@@ -15,7 +15,7 @@ const RestaurantsMenu = () => {
     const data = await fetch(SWIGGY_MENU_API+id);
     const json = await data.json();
     setRestaurant(json.data);
-    console.log(json.data);
+    // console.log(json.data);
   }
 
   return (!restaurant) ? (
