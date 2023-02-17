@@ -9,7 +9,7 @@ const ErrorPage = () => {
         status,
         statusText
     } = err;
-    console.log(err);
+    // console.log(err);
   return (
     <div>
         <h1> {status} {statusText} </h1>
