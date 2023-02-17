@@ -7,7 +7,7 @@
     
 }
 a{
-    /* all: unset; */
+    all: unset;
 }
 .body{
     display: flex;
