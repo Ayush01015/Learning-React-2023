@@ -16,15 +16,12 @@ const RestaurantsMenu = () => {
     setRestaurant(json.data);
     console.log(json.data);
   }
-  
+
   return (
     <div className="restraunt-menu">
       <div className="menu-header">
         <div className="menu-header-img menu-header-mg">
-          <img
-            src={IMG_CDN_URL + restaurant?.cloudinaryImageId}
-            alt="resImg"
-          />
+          <img src={IMG_CDN_URL + restaurant?.cloudinaryImageId} alt="resImg" />
         </div>
         <div className="header-info menu-header-mg2">
           <span
@@ -49,25 +46,38 @@ const RestaurantsMenu = () => {
               padding: "5px",
             }}
           >
-            <span className="sub-menu-item">
-              {restaurant?.avgRating} Stars
-            </span>
+            <span className="sub-menu-item">{restaurant?.avgRating} Stars</span>
             <span className="sub-menu-item">
               {restaurant?.sla?.deliveryTime} Mins
             </span>
-            <span className="sub-menu-item">
-              {restaurant?.costForTwoMsg}
-            </span>
+            <span className="sub-menu-item">{restaurant?.costForTwoMsg}</span>
           </div>
         </div>
       </div>
       <div className="menu">
-        <h2>Menu</h2>
-        <ul>
-          {restaurant?.menu?.items && Object.values(restaurant?.menu?.items).map((item) => (
-            <li key={item.id}>{item.name}{item.id}</li>
-          ))}
-        </ul>
+        <span className="menu-span">Menu</span>
+        <div className="menu-sub">
+          {restaurant?.menu?.items &&
+            Object.values(restaurant?.menu?.items).map((item) => (
+              <div className="menu-sub-2" key={item.id}>
+                <div className="menu-item-con">
+                <div className="menu-item-con-data">
+                  <p
+                  style={{
+                    fontSize:"1.6rem",
+                    fontWeight:"bold",
+                  }}
+                  >{item.name}</p>
+                  <p style={{ fontSize:"1rem"  }} >{item.category}</p>
+                  <p>₹{restaurant?.menu?.items[item.id].price/(100)}</p>
+                </div>
+                <div className="menu-item-con-img">
+                  <img src={IMG_CDN_URL + item.cloudinaryImageId} alt="img" />
+                </div>
+                </div>
+              </div>
+            ))}
+        </div>
       </div>
     </div>
   );
