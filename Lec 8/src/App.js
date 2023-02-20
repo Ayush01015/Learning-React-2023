@@ -7,6 +7,7 @@ import AboutUs from "./components/AboutUs";
 import ErrorPage from "./components/ErrorPage";
 import Contact from "./components/Contact";
 import Profile from "./components/Profile";
+import ProfileClass from "./components/Class Components/ProfileClass";
 import {
   createBrowserRouter,
   RouterProvider,
@@ -40,7 +41,8 @@ const appRouter = createBrowserRouter([
         element:<AboutUs/>,
         children:[{
           path:"profile",
-          element:<Profile/>
+          // element:<Profile/>,
+          element:<ProfileClass name={"Ayush shrivastav"} xyz={"abc"}/>
         }
         ]
       },
