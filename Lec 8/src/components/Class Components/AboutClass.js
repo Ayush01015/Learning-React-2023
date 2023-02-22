@@ -20,5 +20,4 @@ class AboutClass extends React.Component{
         )
     }
 }
-
 export default AboutClass;

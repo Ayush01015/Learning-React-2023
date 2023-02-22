@@ -23,6 +23,9 @@ class ProfileClass extends React.Component {
     })
     console.log("Child - componentDidMount")
   }
+  componentDidUpdate(){
+    console.log("Child - componentDidUpdate")
+  }
   render() {
     console.log("Child - Render");
     return (
@@ -38,9 +41,10 @@ class ProfileClass extends React.Component {
         <img 
         style={{
             width:"15%",
-            borderRadius:"100%",
+            borderRadius:"100%"
         }}
-        src={this.state.userInfo.avatar_url} alt="img" />
+        src={this?.state?.userInfo?.avatar_url} alt="img" /> 
+        {/* Use optional chaining for all and Destructuring*/}
         <p>UserName: {this.state.userInfo.login}</p>
         <p>UserName: {this.state.userInfo.bio}</p>
         {console.log("--------",this.state.userInfo.bio)}
@@ -52,13 +56,18 @@ class ProfileClass extends React.Component {
 export default ProfileClass;
 
 /*
-    order Of call
-
-    parent - Constructor
-    parent - render
-    child - constructor
-    child - render
-    child - componentDidMount
-    parent - componentDidMount
+    Order Of call
+__________Render________Phase__________
+parent - Constructor
+parent - render
+child - constructor
+child - render
+__________Commit________Phase__________
+parent - componentDidMount
+child - componentDidMount (async)
+Child - Render (Change in State)
+Child - componentDidUpdate (After Every Render)
 
 */
+
+
