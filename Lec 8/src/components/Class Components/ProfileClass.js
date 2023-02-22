@@ -4,12 +4,23 @@ class ProfileClass extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      count: 0,
-      count2: 0,
+      userInfo:{
+        name:"NULL",
+        login:"NULL",
+        avatar_url:"NULL",
+        bio:"",
+      }
     };
     console.log("Child - Constructor");
   }
-  componentDidMount(){
+  async componentDidMount(){
+    //API CALL
+    const data = await fetch("https://api.github.com/users/Ayush01015");
+    const json = await data.json();
+    console.log(json);
+    this.setState({
+        userInfo:json,
+    })
     console.log("Child - componentDidMount")
   }
   render() {
@@ -20,22 +31,19 @@ class ProfileClass extends React.Component {
           border: "1px solid red",
         }}
       > 
-        <h3>Data from Class Based Components</h3>
-        <p>Name: {this.props.name}</p>
-        <p>Front End Developer</p>
         <p>Namaste React</p>
-        <p>count: {this.state.count}</p>
-        <p>count2: {this.state.count2}</p>
-        <button
-          onClick={() => {
-            this.setState({
-              count: 1,
-              count2: 999,
-            });
-          }}
-        >
-          Click
-        </button>
+        <h3>Data from Class Based Components</h3>
+        <p>Name: {this.state.userInfo.name}</p>
+        <p>Front End Developer</p>
+        <img 
+        style={{
+            width:"15%",
+            borderRadius:"100%",
+        }}
+        src={this.state.userInfo.avatar_url} alt="img" />
+        <p>UserName: {this.state.userInfo.login}</p>
+        <p>UserName: {this.state.userInfo.bio}</p>
+        {console.log("--------",this.state.userInfo.bio)}
       </div>
     );
   }
@@ -45,7 +53,7 @@ export default ProfileClass;
 
 /*
     order Of call
-    
+
     parent - Constructor
     parent - render
     child - constructor
