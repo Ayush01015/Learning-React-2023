@@ -6,7 +6,6 @@ import Footer from "./components/Footer";
 import AboutUs from "./components/AboutUs";
 import ErrorPage from "./components/ErrorPage";
 import Contact from "./components/Contact";
-import Profile from "./components/Profile";
 import ProfileClass from "./components/Class Components/ProfileClass";
 import {
   createBrowserRouter,
@@ -15,6 +14,8 @@ import {
 } from "react-router-dom";
 import Deals from "./components/Deals";
 import RestaurantsMenu from "./components/RestaurantsMenu";
+import AboutClass from "./components/Class Components/AboutClass"
+
 const SwiGker = () => {
   return (
     <>
@@ -38,12 +39,13 @@ const appRouter = createBrowserRouter([
       },
       {
         path:"/about",
-        element:<AboutUs/>,
-        children:[{
-          path:"profile",
-          // element:<Profile/>,
-          element:<ProfileClass name={"Ayush shrivastav"} xyz={"abc"}/>
-        }
+        element:<AboutClass/>,
+        children:[
+          {
+            path:"profile",
+            element:<ProfileClass name={"Ayush"}/>
+          },
+
         ]
       },
       {
