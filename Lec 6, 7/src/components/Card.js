@@ -32,6 +32,5 @@ const Card = ({ name, cloudinaryImageId ,address, totalRatingsString, deliveryTi
       </div>
     );
   };
-
-
   export default Card;
+  
