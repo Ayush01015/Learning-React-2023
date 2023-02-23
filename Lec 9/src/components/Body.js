@@ -25,6 +25,11 @@ const Body = () => {
     getRestaurants();
   }, []);
 
+  const isOnline = true;
+  if(isOnline)
+      return <h1>Check your Internet Connection</h1>;
+
+
   if(!allRestaurants) return <h1>Please Reload Something Went Wrong</h1>; //early return
 
   // if(filteredRestaurants.length === 0) return <h1>Not Found</h1>
