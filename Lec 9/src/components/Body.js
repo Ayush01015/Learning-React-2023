@@ -5,6 +5,7 @@ import { SWIGGY_PUBLIC_API } from "../constants";
 import ShimmerUI from "./ShimmerUI";
 import { Link } from "react-router-dom";
 import { filterData } from "../Utils/Utils";
+import useOnline from "../Utils/useOnline";
 
 const Body = () => {
   const [searchInput, setSearchInput] = useState(""); //for searching input in seach input box
@@ -25,9 +26,9 @@ const Body = () => {
     getRestaurants();
   }, []);
 
-  const isOnline = true;
-  if(isOnline)
-      return <h1>Check your Internet Connection</h1>;
+  const isOnline = useOnline();
+  if(!isOnline)
+      return <h1>Check your Internet Connection</h1>
 
 
   if(!allRestaurants) return <h1>Please Reload Something Went Wrong</h1>; //early return
