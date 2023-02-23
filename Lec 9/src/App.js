@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import AboutUs from "./components/AboutUs";
 import ErrorPage from "./components/ErrorPage";
 import Contact from "./components/Contact";
+import Instamart from "./components/Instamart";
 
 import {
   createBrowserRouter,
@@ -50,6 +51,10 @@ const appRouter = createBrowserRouter([
       {
         path:"/restaurants/:id",
         element:<RestaurantsMenu/>
+      },
+      {
+        path:"/instamart",
+        element:<Instamart/>
       },
     ]
   },

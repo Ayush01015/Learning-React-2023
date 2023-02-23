@@ -43,6 +43,9 @@ const Header = () => {
         <li className="li-item">
           <Link to="/deals">Deals</Link>
         </li>
+        <li className="li-item">
+          <Link to="/instamart">Instamart</Link>
+        </li>
       </ul>
       {log === true ? (
         <button className="log-btn" onClick={() => setLog(false)}>
