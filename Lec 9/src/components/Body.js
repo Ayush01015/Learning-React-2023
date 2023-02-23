@@ -28,7 +28,7 @@ const Body = () => {
 
   const isOnline = useOnline();
   if(!isOnline)
-      return <h1>Check your Internet Connection</h1>
+      return <h1>Check your Internet Connection...</h1>
 
 
   if(!allRestaurants) return <h1>Please Reload Something Went Wrong</h1>; //early return
