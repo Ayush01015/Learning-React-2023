@@ -4,14 +4,8 @@ import { useState, useEffect } from "react";
 import { SWIGGY_PUBLIC_API } from "../constants";
 import ShimmerUI from "./ShimmerUI";
 import { Link } from "react-router-dom";
-function filterData(searchText, allRestaurants) {
-   //filtering data from allRestaurants
-  const filterData = allRestaurants.filter((restaurant) =>
-    restaurant?.data?.name?.toLowerCase().includes(searchText.toLowerCase())
-  );
+import { filterData } from "../Utils/Utils";
 
-  return filterData; //returning searched data
-}
 const Body = () => {
   const [searchInput, setSearchInput] = useState(""); //for searching input in seach input box
   const [filteredRestaurants, setfilteredRestaurants] = useState([]); // for searched data on search button
@@ -21,7 +15,7 @@ const Body = () => {
   async function getRestaurants() { //fetching data fromm API
     const data = await fetch(SWIGGY_PUBLIC_API);
     const json = await data.json();
-    console.log("Json: ", json);
+    // console.log("Json: ", json);
     setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards); //Setting data in restaurants
     setfilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards); //Setting data in filtered restaurants for search.
   }

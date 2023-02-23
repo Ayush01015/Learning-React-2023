@@ -1,22 +1,15 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
 import { SWIGGY_MENU_API } from "../constants";
 import { IMG_CDN_URL } from "../constants";
 import ShimmerMenu from "./ShimmerMenu";
-const RestaurantsMenu = () => {
-  const { id } = useParams();
-  const [restaurant, setRestaurant] = useState(null);
-  useEffect(() => {
-    getRestaurantsMenu();
-  }, []);
+import useRestaurants  from "../Utils/useRestaurant";
 
-  async function getRestaurantsMenu() {
-    const data = await fetch(SWIGGY_MENU_API+id);
-    const json = await data.json();
-    setRestaurant(json.data);
-    // console.log(json.data);
-  }
+const RestaurantsMenu = () => {
+
+  const { id } = useParams();
+  const restaurant = useRestaurants(id); 
+  // separate Custom Hook for fetching and rendering the data.
 
   return (!restaurant) ? (
     <ShimmerMenu />
