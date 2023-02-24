@@ -8,7 +8,7 @@ export const IMG_CDN_URL =
 export const SWIGGY_PUBLIC_API =
   "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.627981&lng=77.3648567&page_type=DESKTOP_WEB_LISTING";
 export const SWIGGY_MENU_API =
-  "https://www.swiggy.com/dapi/menu/v4/full?lat=28.627981&lng=77.3648567&menuId=";
+  "https://www.swiggy.com/dapi/menu/v4/full?lat=28.627981&lng=77.3648567&menuId=";   
 
 
 
