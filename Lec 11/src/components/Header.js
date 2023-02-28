@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
+import useOnline from "../Utils/useOnline";
 const Header = () => {
   const [log, setLog] = useState(true);
+  const isOnline = useOnline();
   return (
     <div
       className="font"
@@ -19,15 +20,33 @@ const Header = () => {
       }}
     >
       <span style={{ cursor: "pointer", fontSize: "2rem" }}>
-        swi<span style={{ color: "#F99417" }}>G</span>ker
+      <Link to="/" > swi<span style={{ color: "#F99417" }}>G</span>ker</Link>
       </span>
+      {
+        (!isOnline)?(
+          <span
+        style={{
+          position: "absolute",
+          right: "4.5rem",
+        }}
+      >{`🚫`}</span>
+        ):(
+          <span
+        style={{
+          position: "absolute",
+          right: "4.5rem",
+        }}
+      >{`🟢`}</span>
+        )
+
+      }
       <ul
         style={{
           display: "flex",
           justifyContent: "space-evenly",
           alignItems: "center",
           listStyle: "none",
-          marginLeft: "40rem",
+          marginLeft: "30rem",
         }}
       >
         {/* have to add pseudo class active for 1st item* */}
