@@ -9,9 +9,6 @@
 a{
     all: unset;
 }
-body{
-    background-color: #F5F5F5;
-}
 .body{
     display: flex;
     flex-direction: row;
