@@ -1,12 +1,18 @@
 import React, { useState } from "react";
-const Section = ({ title, description, isVisible, setIsVisible }) => {
+const Section = ({
+  title,
+  description,
+  isVisible,
+  setIsVisible,
+  setSectionConfig,
+}) => {
   return (
     <div className="p-3 m-2 border-2 border-black">
       <h3 className="font-bold text-2xl">{title}</h3>
       {!isVisible && (
         <button
           className="border border-black p-1 w-[60px] bg-[#f4a545] rounded hover:bg-[#f88f0e]"
-          onClick={() => setIsVisible(true)}
+          onClick={() => setIsVisible()}
         >
           Show
         </button>
@@ -14,7 +20,13 @@ const Section = ({ title, description, isVisible, setIsVisible }) => {
       {isVisible && (
         <button
           className="border border-black p-1 w-[60px] bg-[#f4a545] rounded hover:bg-[#f88f0e]"
-          onClick={() => setIsVisible(false)}
+          onClick={() =>
+            setSectionConfig({
+              setAbout: false,
+              setContact: false,
+              setServices: false,
+            })
+          }
         >
           Hide
         </button>
@@ -44,6 +56,7 @@ const Instamart = () => {
             setServices: false,
           })
         }
+        setSectionConfig={setSectionConfig}
       />
       <Section
         title={"Contact"}
@@ -58,6 +71,7 @@ const Instamart = () => {
             setServices: false,
           })
         }
+        setSectionConfig={setSectionConfig}
       />
       <Section
         title={"Services"}
@@ -72,6 +86,7 @@ const Instamart = () => {
             setServices: true,
           })
         }
+        setSectionConfig={setSectionConfig}
       />
     </div>
   );
