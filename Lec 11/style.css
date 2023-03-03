@@ -81,6 +81,7 @@ a{
 .search-input{
     font-size: 1.4rem;
     padding: 5px;
+    border : 1px solid black;
     border-radius: 3px;
 }
 .search-btn{
