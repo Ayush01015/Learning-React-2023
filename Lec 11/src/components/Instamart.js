@@ -4,7 +4,7 @@ const Section = ({
   description,
   isVisible,
   setIsVisible,
-  setSectionConfig,
+  setVisibleSection,
 }) => {
   return (
     <div className="p-3 m-2 border-2 border-black">
@@ -21,11 +21,7 @@ const Section = ({
         <button
           className="border border-black p-1 w-[60px] bg-[#f4a545] rounded hover:bg-[#f88f0e]"
           onClick={() =>
-            setSectionConfig({
-              setAbout: false,
-              setContact: false,
-              setServices: false,
-            })
+            setVisibleSection("")
           }
         >
           Hide
@@ -36,11 +32,7 @@ const Section = ({
   );
 };
 const Instamart = () => {
-  const [sectionConfig, setSectionConfig] = useState({
-    setAbout: false,
-    setContact: false,
-    setServices: false,
-  });
+  const [visibleSection, setVisibleSection] = useState("");
   return (
     <div>
       <Section
@@ -48,45 +40,33 @@ const Instamart = () => {
         description={
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
         }
-        isVisible={sectionConfig.setAbout}
-        setIsVisible={() =>
-          setSectionConfig({
-            setAbout: true,
-            setContact: false,
-            setServices: false,
-          })
-        }
-        setSectionConfig={setSectionConfig}
+        isVisible={visibleSection === "about"}
+        setIsVisible={() => {
+          setVisibleSection("about");
+        }}
+        setVisibleSection={setVisibleSection}
       />
       <Section
         title={"Contact"}
         description={
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
         }
-        isVisible={sectionConfig.setContact}
-        setIsVisible={() =>
-          setSectionConfig({
-            setAbout: false,
-            setContact: true,
-            setServices: false,
-          })
-        }
-        setSectionConfig={setSectionConfig}
+        isVisible={visibleSection === "Contact"}
+        setIsVisible={() => {
+          setVisibleSection("Contact");
+        }}
+        setVisibleSection={setVisibleSection}
       />
       <Section
         title={"Services"}
         description={
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
         }
-        isVisible={sectionConfig.setServices}
-        setIsVisible={() =>
-          setSectionConfig({
-            setAbout: false,
-            setContact: false,
-            setServices: true,
-          })
-        }
-        setSectionConfig={setSectionConfig}
+        isVisible={visibleSection === "Services"}
+        setIsVisible={() => {
+          setVisibleSection("Services");
+        }}
+        setVisibleSection={setVisibleSection}
       />
     </div>
   );
