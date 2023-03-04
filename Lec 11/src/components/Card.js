@@ -1,6 +1,8 @@
 import {IMG_CDN_URL} from "../constants"
-
+import React,{useContext} from "react";
+import userContext from "../Utils/useContext";
 const Card = ({ name, cloudinaryImageId ,address, totalRatingsString, deliveryTime, area, cuisines }) => {
+  const {user} = useContext(userContext);
     return (
       <div className="card-component">
         <div className="card">
@@ -27,6 +29,9 @@ const Card = ({ name, cloudinaryImageId ,address, totalRatingsString, deliveryTi
               <h5>{totalRatingsString}</h5>
               <h5>{deliveryTime} MINS</h5>
             </div>
+            <span>
+              {user.name}
+            </span>
           </div>
         </div>
       </div>

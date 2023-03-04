@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useState,useContext } from "react";
 import { Link } from "react-router-dom";
+import userContext from "../Utils/useContext";
 import useOnline from "../Utils/useOnline";
 const Header = () => {
   const [log, setLog] = useState(true);
   const isOnline = useOnline();
+  const {user} = useContext(userContext);
   return (
     <div
       className="font"
@@ -22,6 +24,7 @@ const Header = () => {
       <span style={{ cursor: "pointer", fontSize: "2rem" }}>
       <Link to="/" > swi<span style={{ color: "#F99417" }}>G</span>ker</Link>
       </span>
+
       {
         (!isOnline)?(
           <span
@@ -66,7 +69,7 @@ const Header = () => {
           <Link to="/instamart">Instamart</Link>
         </li>
       </ul>
-      {log === true ? (
+      {/* {log === true ? (
         <button className="log-btn" onClick={() => setLog(false)}>
           Log in
         </button>
@@ -74,7 +77,10 @@ const Header = () => {
         <button className="log-btn" onClick={() => setLog(true)}>
           Log out
         </button>
-      )}
+      )} */}
+      <span className="flex flex-row text-[0.5rem]">
+        {user.name} {user.email}
+      </span>
     </div>
   );
 };
