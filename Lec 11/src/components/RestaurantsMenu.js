@@ -1,5 +1,5 @@
 import React,{useContext} from "react";
-import userContext from "../Utils/useContext";
+import userContext from "../Utils/userContext";
 import { useParams } from "react-router-dom";
 import { SWIGGY_MENU_API } from "../constants";
 import { IMG_CDN_URL } from "../constants";
@@ -11,6 +11,7 @@ const RestaurantsMenu = () => {
   const { id } = useParams();
   const restaurant = useRestaurants(id); 
   // separate Custom Hook for fetching and rendering the data.
+
 
   return (!restaurant) ? (
     <ShimmerMenu />

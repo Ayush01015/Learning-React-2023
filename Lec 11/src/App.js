@@ -1,18 +1,18 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense,useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import Footer from "./components/Footer";
 import AboutUs from "./components/AboutUs";
 import ErrorPage from "./components/ErrorPage";
-import Contact from "./components/Contact";
+import Contact from "./components/Contact"; 
 // import Instamart from "./components/Instamart";
 
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Deals from "./components/Deals";
 import RestaurantsMenu from "./components/RestaurantsMenu";
 import ShimmerCard from "./components/ShimmerCard";
-
+import userContext from "./Utils/userContext";
 /*
 Chunking
 code splitting
@@ -25,13 +25,18 @@ dynamic import
 const Instamart = lazy(() => import("./components/Instamart.js")); //it's a promise(js)
 
 const SwiGker = () => {
+  const [user,setUser] = useState({
+    name:"DummyME",
+    email:"dummy@gmail.com"
+  });
   return (
-    <>
+    <userContext.Provider value={{user}}>
       <Header />
+      {user.name}
       {/* {every Children Will come at the place of Outlet when the Link is clicked} */}
       <Outlet />
       <Footer />
-    </>
+    </userContext.Provider>
   );
 };
 

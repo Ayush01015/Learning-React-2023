@@ -1,6 +1,6 @@
 import {IMG_CDN_URL} from "../constants"
 import React,{useContext} from "react";
-import userContext from "../Utils/useContext";
+import userContext from "../Utils/userContext";
 const Card = ({ name, cloudinaryImageId ,address, totalRatingsString, deliveryTime, area, cuisines }) => {
   const {user} = useContext(userContext);
     return (
@@ -29,9 +29,9 @@ const Card = ({ name, cloudinaryImageId ,address, totalRatingsString, deliveryTi
               <h5>{totalRatingsString}</h5>
               <h5>{deliveryTime} MINS</h5>
             </div>
-            <span>
+            {/* <span>
               {user.name}
-            </span>
+            </span> */}
           </div>
         </div>
       </div>
