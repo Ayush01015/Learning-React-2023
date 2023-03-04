@@ -29,9 +29,9 @@ const Card = ({ name, cloudinaryImageId ,address, totalRatingsString, deliveryTi
               <h5>{totalRatingsString}</h5>
               <h5>{deliveryTime} MINS</h5>
             </div>
-            {/* <span>
+            <span>
               {user.name}
-            </span> */}
+            </span>
           </div>
         </div>
       </div>

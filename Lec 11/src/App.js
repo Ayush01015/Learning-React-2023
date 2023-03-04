@@ -30,9 +30,11 @@ const SwiGker = () => {
     email:"dummy@gmail.com"
   });
   return (
-    <userContext.Provider value={{user}}>
+    <userContext.Provider value={{
+      user:user,
+      setUser:setUser
+    }}>
       <Header />
-      {user.name}
       {/* {every Children Will come at the place of Outlet when the Link is clicked} */}
       <Outlet />
       <Footer />
