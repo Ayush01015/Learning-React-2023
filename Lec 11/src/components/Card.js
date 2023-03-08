@@ -4,7 +4,7 @@ import userContext from "../Utils/userContext";
 const Card = ({ name, cloudinaryImageId ,address, totalRatingsString, deliveryTime, area, cuisines }) => {
   const {user} = useContext(userContext);
     return (
-      <div className="card-component">
+      <div className="card-component hover:bg-[#f2f1f1]">
         <div className="card">
           <img
             src={
