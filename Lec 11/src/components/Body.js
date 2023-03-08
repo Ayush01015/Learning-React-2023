@@ -15,7 +15,8 @@ const Body = () => {
   async function getRestaurants() { //fetching data fromm API
     const data = await fetch(SWIGGY_PUBLIC_API);
     const json = await data.json();
-    // console.log("Json: ", json);
+    console.log("Json: ", json);
+    console.log("-->",json?.data?.cards[2]?.data?.data?.cards);
     setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards); //Setting data in restaurants
     setfilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards); //Setting data in filtered restaurants for search.
   }
@@ -31,7 +32,7 @@ const Body = () => {
 
   if(!allRestaurants) return <h1>Please Reload Something Went Wrong</h1>; //early return
 
-  // if(filteredRestaurants.length === 0) return <h1>Not Found</h1>
+  
   return allRestaurants?.length === 0 ? (
     <ShimmerUI />
   ) : (
