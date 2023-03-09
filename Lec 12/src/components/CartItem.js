@@ -22,39 +22,3 @@ const CartItem = ({ name, price, cloudinaryImageId, category }) => {
 };
 
 export default CartItem;
-/**
- * 
- *         <div className="menu-sub">
-          {restaurant?.menu?.items &&
-            Object.values(restaurant?.menu?.items).map((item) => (
-              <div className="menu-sub-2" key={item.id}>
-                <div className="menu-item-con">
-                  <div className="menu-item-con-data">
-                    <p
-                      style={{
-                        fontSize: "1.3rem",
-                        fontWeight: "bold",
-                      }}
-                    >
-                      {item.name}
-                    </p>
-                    <p style={{ fontSize: "1rem" }}>{item.category}</p>
-                    <p>₹{restaurant?.menu?.items[item.id].price / 100}</p>
-                  </div>
-                  <div className="menu-item-con-img">
-                    <img
-                      src={IMG_CDN_URL + item.cloudinaryImageId}
-                      alt="img"
-                    />
-                    <button
-                      onClick={()=>addCartItem(item)}
-                      className="border border-black w-14 px-3 py-1 flex justify-center items-center cursor-pointer bg-white relative left-14 bottom-3"
-                    >
-                      Add
-                    </button>
-                  </div>
-                </div>
-              </div>
-            ))}
-        </div>
- */
