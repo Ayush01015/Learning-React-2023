@@ -12,9 +12,9 @@ const RestaurantsMenu = () => {
   // separate Custom Hook for fetching and rendering the data.
   const restaurant = useRestaurants(id);
   const dispatch = useDispatch();
-  const handleAddItem = () => {
-    dispatch(addItem("grapes"));
-  };
+  // const handleAddItem = () => {
+  //   dispatch(addItem("grapes"));
+  // };
 
   return !restaurant ? (
     <ShimmerMenu />
