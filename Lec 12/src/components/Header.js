@@ -1,4 +1,4 @@
-import { useState,useContext } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnline from "../Utils/useOnline";
 
@@ -7,12 +7,11 @@ import { useSelector } from "react-redux";
 const Header = () => {
   const [log, setLog] = useState(true);
   const isOnline = useOnline();
-  const cartItems = useSelector(store => store.cart.items);
+  const cartItems = useSelector((store) => store.cart.items);
   console.log(cartItems);
 
   return (
     <div
-
       className="font sticky top-0"
       style={{
         backgroundColor: "black",
@@ -23,31 +22,32 @@ const Header = () => {
         flexDirection: "row",
         alignItems: "center",
         fontWeight: "bold",
-        zIndex:"1",
+        zIndex: "1",
       }}
     >
       <span style={{ cursor: "pointer", fontSize: "2rem" }}>
-      <Link to="/" > swi<span style={{ color: "#F99417" }}>G</span>ker</Link>
+        <Link to="/">
+          {" "}
+          swi<span style={{ color: "#F99417" }}>G</span>ker
+        </Link>
       </span>
 
-      {
-        (!isOnline)?(
-          <span
-        style={{
-          position: "absolute",
-          right: "4.5rem",
-        }}
-      >{`🚫`}</span>
-        ):(
-          <span
-        style={{
-          position: "absolute",
-          right: "4.5rem",
-        }}
-      >{`🟢`}</span>
-        )
+      {!isOnline ? (
+        <span
+          style={{
+            position: "absolute",
+            right: "4.5rem",
+          }}
+        >{`🚫`}</span>
+      ) : (
+        <span
+          style={{
+            position: "absolute",
+            right: "4.5rem",
+          }}
+        >{`🟢`}</span>
+      )}
 
-      }
       <ul
         style={{
           display: "flex",
