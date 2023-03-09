@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const cartSlice = createSlice({
     name:"cart",
     initialState:{
-        items:["Banana","Apples"]
+        items:[]
     },
     reducers:{
         //these function did not return anything they take the state and directly modify it.

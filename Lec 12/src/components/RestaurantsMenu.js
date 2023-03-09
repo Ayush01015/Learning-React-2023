@@ -12,9 +12,12 @@ const RestaurantsMenu = () => {
   // separate Custom Hook for fetching and rendering the data.
   const restaurant = useRestaurants(id);
   const dispatch = useDispatch();
-  const handleAddItem = () => {
-    dispatch(addItem("grapes"));
-  };
+  // const handleAddItem = () => {
+  //   dispatch(addItem("grapes"));
+  // };
+  const addCartItem = (item) =>{
+    dispatch(addItem(item));
+  }
 
   return !restaurant ? (
     <ShimmerMenu />
@@ -80,7 +83,7 @@ const RestaurantsMenu = () => {
                       alt="img"
                     />
                     <button
-                      onClick={handleAddItem}
+                      onClick={()=>addCartItem(item)}
                       className="border border-black w-14 px-3 py-1 flex justify-center items-center cursor-pointer bg-white relative left-14 bottom-3"
                     >
                       Add

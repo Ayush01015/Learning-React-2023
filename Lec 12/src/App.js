@@ -12,7 +12,7 @@ import RestaurantsMenu from "./components/RestaurantsMenu";
 import ShimmerCard from "./components/ShimmerCard";
 import {Provider} from "react-redux";
 import store from "./Utils/store";
-
+import Cart from "./components/Cart";
 const Instamart = lazy(() => import("./components/Instamart.js")); //it's a promise(js) lazy loading
 
 const SwiGker = () => {
@@ -55,7 +55,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/cart",
-        element: <Deals />,
+        element: <Cart />,
       },
       {
         path: "/instamart",
