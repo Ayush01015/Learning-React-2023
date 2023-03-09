@@ -26,8 +26,8 @@ const Instamart = lazy(() => import("./components/Instamart.js")); //it's a prom
 
 const SwiGker = () => {
   const [user,setUser] = useState({
-    name:"DummyME",
-    email:"dummy@gmail.com"
+    name:"Ayush Shrivastav",
+    email:"ayushshrivastav575@gmail.com"
   });
   return (
     <userContext.Provider value={{
