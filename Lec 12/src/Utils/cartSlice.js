@@ -21,4 +21,12 @@ const cartSlice = createSlice({
 
 export const {addItem, removeItem, clearCart} = cartSlice.actions;
 export default cartSlice.reducer;
- 
+
+
+/**
+    note every jargons there is high chances of making mistake.
+    reducers
+    actions
+    reducer
+    action
+ */

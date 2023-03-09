@@ -73,6 +73,7 @@ const RestaurantsMenu = () => {
                   </div>
                   <div className="menu-item-con-img">
                     <img src={IMG_CDN_URL + item.cloudinaryImageId} alt="img" />
+                    <button className="border border-black w-14 px-3 py-1 flex justify-center items-center cursor-pointer bg-white relative left-14 bottom-3" >Add</button>
                   </div>
                 </div>
               </div>

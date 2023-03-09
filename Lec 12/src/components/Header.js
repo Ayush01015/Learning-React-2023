@@ -1,9 +1,13 @@
 import { useState,useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnline from "../Utils/useOnline";
+import { useSelector } from "react-redux";
+
 const Header = () => {
   const [log, setLog] = useState(true);
   const isOnline = useOnline();
+  const cartItems = useSelector(store => store.cart.items);
+
   return (
     <div
       className="font"
@@ -65,6 +69,9 @@ const Header = () => {
         </li>
         <li className="li-item">
           <Link to="/instamart">Instamart</Link>
+        </li>
+        <li className="li-item">
+          <Link to="/cart">Cart-{cartItems.length}</Link>
         </li>
       </ul>
       {log === true ? (

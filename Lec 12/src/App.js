@@ -54,6 +54,10 @@ const appRouter = createBrowserRouter([
         element: <RestaurantsMenu />,
       },
       {
+        path: "/cart",
+        element: <Deals />,
+      },
+      {
         path: "/instamart",
         element: (
           <Suspense fallback={<ShimmerCard/>}>
@@ -66,4 +70,5 @@ const appRouter = createBrowserRouter([
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(<RouterProvider router={appRouter} />);
