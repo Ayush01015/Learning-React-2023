@@ -8,6 +8,16 @@ const Cart = () => {
 
   const cartItems = useSelector((store) => store.cart.items);
 
+  const index = (id) =>{ //function take id and return index
+    let index = -1;
+    cartItems.map((cartItem,i)=>{
+        if(cartItem.id===id){
+            index=i;
+        }
+    })
+    return index;
+  }
+
   const dispatch = useDispatch();
 
   const clearCartItems = () => {
@@ -33,7 +43,7 @@ const Cart = () => {
         </div>
       </>
     );
-  //   console.log("-->", cartItems);
+    console.log("-->", cartItems);
   return (
     <div className="mr-96 ml-96 mb-16 flex flex-col justify-center items-center">
       <span className="mt-5 mb-5 flex justify-center items-center text-4xl font-medium text-[#F99417] ">
@@ -41,7 +51,8 @@ const Cart = () => {
       </span>
       <div>
         {cartItems.map((cartItem) => {
-          return <CartItem key={cartItem.id} {...cartItem} />;
+            const idx = index(cartItem.id)
+          return <CartItem key={cartItem.id} {...cartItem} id={idx}/>;
         })}
       </div>
       <span className="mt-4 text-2xl font-semibold text-[#f942b0]">Amount to pay: ₹ {totalPrice / 100}</span>

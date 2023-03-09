@@ -2,10 +2,11 @@ import React from "react";
 import { IMG_CDN_URL } from "../constants";
 import { useDispatch } from "react-redux";
 import { removeItem } from "../Utils/cartSlice";
-const CartItem = ({ name, price, cloudinaryImageId, category }) => {
+const CartItem = ({ name, price, cloudinaryImageId, category, id}) => {
     const dispatch = useDispatch();
-    const removeCartItem = ()=>{
-        dispatch(removeItem());
+
+    const removeCartItem = (id)=>{
+        dispatch(removeItem(id));
     }
 
   return (
@@ -17,7 +18,7 @@ const CartItem = ({ name, price, cloudinaryImageId, category }) => {
             src={IMG_CDN_URL + cloudinaryImageId}
             alt="img"
           />
-          <button onClick={()=>removeCartItem()} className="relative left-3 bottom-1 w-20 h-6 bg-[#f6b566] border border-black rounded-sm hover:bg-[#fba844]">Remove</button>
+          <button onClick={()=>removeCartItem(id)} className="relative left-3 bottom-1 w-20 h-6 bg-[#f6b566] border border-black rounded-sm hover:bg-[#fba844]">Remove</button>
         </span>
         <div className="w-80">
           <p>{name}</p>
