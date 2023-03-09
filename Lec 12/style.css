@@ -20,9 +20,11 @@ a{
 }
 .li-item{
     color:white;
-    margin-right:35px;
+    margin-right:10px;
     cursor: pointer;
     font-size: 0.9rem;
+    padding: 5px;
+    width: 83px;
 }
 .li-item:hover{
     color:#F99417;

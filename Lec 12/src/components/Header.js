@@ -10,7 +10,8 @@ const Header = () => {
 
   return (
     <div
-      className="font"
+
+      className="font sticky top-0"
       style={{
         backgroundColor: "black",
         color: "white",
@@ -20,7 +21,7 @@ const Header = () => {
         flexDirection: "row",
         alignItems: "center",
         fontWeight: "bold",
-        // justifyContent:"space-around"
+        zIndex:"1",
       }}
     >
       <span style={{ cursor: "pointer", fontSize: "2rem" }}>
@@ -51,7 +52,7 @@ const Header = () => {
           justifyContent: "space-evenly",
           alignItems: "center",
           listStyle: "none",
-          marginLeft: "30rem",
+          marginLeft: "19rem",
         }}
       >
         {/* have to add pseudo class active for 1st item* */}

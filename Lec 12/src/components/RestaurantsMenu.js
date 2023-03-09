@@ -1,19 +1,22 @@
-import React,{useContext} from "react";
+import React, { useContext } from "react";
 import userContext from "../Utils/userContext";
 import { useParams } from "react-router-dom";
-import { SWIGGY_MENU_API } from "../constants";
 import { IMG_CDN_URL } from "../constants";
 import ShimmerMenu from "./ShimmerMenu";
-import useRestaurants  from "../Utils/useRestaurant";
+import useRestaurants from "../Utils/useRestaurant";
+import { addItem } from "../Utils/cartSlice";
+import { useDispatch } from "react-redux";
 
 const RestaurantsMenu = () => {
-
   const { id } = useParams();
-  const restaurant = useRestaurants(id); 
   // separate Custom Hook for fetching and rendering the data.
+  const restaurant = useRestaurants(id);
+  const dispatch = useDispatch();
+  const handleAddItem = () => {
+    dispatch(addItem("grapes"));
+  };
 
-
-  return (!restaurant) ? (
+  return !restaurant ? (
     <ShimmerMenu />
   ) : (
     <div className="restraunt-menu">
@@ -72,8 +75,16 @@ const RestaurantsMenu = () => {
                     <p>₹{restaurant?.menu?.items[item.id].price / 100}</p>
                   </div>
                   <div className="menu-item-con-img">
-                    <img src={IMG_CDN_URL + item.cloudinaryImageId} alt="img" />
-                    <button className="border border-black w-14 px-3 py-1 flex justify-center items-center cursor-pointer bg-white relative left-14 bottom-3" >Add</button>
+                    <img
+                      src={IMG_CDN_URL + item.cloudinaryImageId}
+                      alt="img"
+                    />
+                    <button
+                      onClick={handleAddItem}
+                      className="border border-black w-14 px-3 py-1 flex justify-center items-center cursor-pointer bg-white relative left-14 bottom-3"
+                    >
+                      Add
+                    </button>
                   </div>
                 </div>
               </div>
