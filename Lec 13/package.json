@@ -18,10 +18,13 @@
   },
   "homepage": "https://github.com/Ayush01015/Learning-React-2023#readme",
   "dependencies": {
+    "@emotion/babel-plugin": "^11.10.6",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@mui/material": "^5.11.8",
     "@mui/styled-engine-sc": "^5.11.0",
+    "@parcel/babel-plugin-transform-runtime": "^2.8.3",
+    "@parcel/babel-preset-env": "^2.8.3",
     "@parcel/transformer-js": "^2.8.3",
     "@reduxjs/toolkit": "^1.9.3",
     "babel-plugin-transform-remove-console": "^6.9.4",
@@ -34,6 +37,7 @@
   "devDependencies": {
     "@babel/core": "^7.21.0",
     "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
     "@testing-library/react": "^14.0.0",
     "autoprefixer": "^10.4.13",
     "babel-jest": "^29.5.0",
