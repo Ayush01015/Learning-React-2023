@@ -25,9 +25,8 @@ const Header = () => {
         zIndex: "1",
       }}
     >
-      <span style={{ cursor: "pointer", fontSize: "2rem" }}>
+      <span data-testid="logo" style={{ cursor: "pointer", fontSize: "2rem" }}>
         <Link to="/">
-          {" "}
           swi<span style={{ color: "#F99417" }}>G</span>ker
         </Link>
       </span>
@@ -41,6 +40,7 @@ const Header = () => {
         >{`🚫`}</span>
       ) : (
         <span
+          data-testid="online"
           style={{
             position: "absolute",
             right: "4.5rem",
@@ -74,7 +74,7 @@ const Header = () => {
           <Link to="/instamart">Instamart</Link>
         </li>
         <li className="li-item">
-          <Link to="/cart">Cart-{cartItems.length}</Link>
+          <Link data-testid="cart" to="/cart">Cart-{cartItems.length}</Link>
         </li>
       </ul>
       {log === true ? (
